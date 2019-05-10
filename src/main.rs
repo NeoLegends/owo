@@ -25,7 +25,7 @@ fn main() {
 
                 let port = env::var("PORT")
                     .ok()
-                    .and_then(|v| v.parse().ok())
+                    .and_then(|v| v.trim().parse().ok())
                     .unwrap_or(8080);
 
                 warp::serve(handler).run(([127, 0, 0, 1], port));
