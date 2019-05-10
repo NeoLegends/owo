@@ -1,0 +1,9 @@
+[package]
+name = "owo"
+description = "uwu"
+version = "0.1.0"
+authors = ["Moritz Gunz <moritz.gunz@gmail.com>"]
+edition = "2018"
+
+[profile.release]
+lto = true
