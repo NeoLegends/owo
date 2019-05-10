@@ -21,7 +21,7 @@ fn main() {
 
                 let handler = warp::any()
                     .map(|| "owo")
-                    .map(|owo| warp::reply::with_header(owo, "Host", "Kawaii"));
+                    .map(|owo| warp::reply::with_header(owo, "Server", "Kawaii"));
 
                 let port = env::var("PORT")
                     .ok()
