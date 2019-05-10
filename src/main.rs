@@ -28,7 +28,7 @@ fn main() {
                     .and_then(|v| v.trim().parse().ok())
                     .unwrap_or(8080);
 
-                warp::serve(handler).run(([127, 0, 0, 1], port));
+                warp::serve(handler).run(([0, 0, 0, 0], port));
             },
             _ => println!("kawaii"),
         },
