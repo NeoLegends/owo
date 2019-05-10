@@ -22,7 +22,13 @@ fn main() {
                 let handler = warp::any()
                     .map(|| "owo")
                     .map(|owo| warp::reply::with_header(owo, "Host", "Kawaii"));
-                warp::serve(handler).run(([127, 0, 0, 1], 8080));
+
+                let port = env::var("PORT")
+                    .ok()
+                    .and_then(|v| v.parse().ok())
+                    .unwrap_or(8080);
+
+                warp::serve(handler).run(([127, 0, 0, 1], port));
             },
             _ => println!("kawaii"),
         },
